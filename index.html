@@ -73,7 +73,8 @@
       }
     </style>
     <style>
-      .image-container-cover {
+      /* Hidden Disabilities - Sliding Cover */
+      .hidden-disability {
         position: relative;
         display: inline-block;
         width: 100%;
@@ -81,13 +82,13 @@
         overflow: hidden;
       }
 
-      .img-fluid-cover {
+      .hidden-disability img {
         width: 100%;
         height: auto;
         display: block;
       }
 
-      .cover {
+      .hidden-disability .cover {
         position: absolute;
         top: 0;
         left: 0;
@@ -105,11 +106,40 @@
         transform: translateY(0);
       }
 
-      /* Reveal effect on hover or click */
-      .image-container-cover:hover .cover,
-      .image-container-cover:focus-within .cover,
-      .image-container-cover.active .cover {
+      .hidden-disability:hover .cover,
+      .hidden-disability:focus-within .cover,
+      .hidden-disability.active .cover {
         transform: translateY(100%);
+      }
+
+      /* Seen Disabilities - Blur Effect */
+      .seen-disability {
+        position: relative;
+        display: inline-block;
+        width: 100%;
+        cursor: pointer;
+        overflow: hidden;
+      }
+
+      .seen-disability img {
+        width: 100%;
+        height: auto;
+        display: block;
+        filter: blur(5px);
+        transition: filter 0.5s ease-in-out;
+      }
+
+      .seen-disability:hover img,
+      .seen-disability:focus-within img,
+      .seen-disability.active img {
+        filter: blur(0);
+      }
+
+      .caption {
+        text-align: center;
+        font-weight: bold;
+        margin-top: 10px;
+        font-size: 1.2rem;
       }
     </style>
     <script type="text/javascript">
@@ -2204,27 +2234,45 @@
       <!-- MASK SECTION - START -->
 
       <div class="container py-5 text-center">
-        <h2 class="mb-4">
-          Unmasking Hidden Disabilities at Trinity College Dublin
-        </h2>
-        <h3 class="mb-4">Click or Hover to Reveal</h3>
+        <h2 class="mb-4">Unmasking Disabilities at Trinity College Dublin</h2>
         <p>
-          At Trinity College Dublin, many students live with hidden disabilities
-          such as Autism, ADHD, and AuDHD, which are not immediately visible but
-          deeply impact their daily lives. These images symbolise the unseen
-          challenges they navigate—barriers in learning, social interactions,
-          and mental well-being. Just as the covers in these images conceal part
-          of the picture, society often overlooks the experiences of students
-          with hidden disabilities. By revealing what lies beneath, we
-          acknowledge their needs, promote inclusion, and foster a more
-          understanding and supportive university community.
+          Many students at Trinity live with disabilities, both visible and
+          hidden. This exhibition highlights the experiences of those with
+          **hidden disabilities** (e.g., Autism, ADHD, AuDHD) and **seen
+          disabilities** (e.g., wheelchair users, cerebral palsy). Hover or
+          click to reveal the full image.
         </p>
-        <div class="row row-cols-1 row-cols-md-3 g-4" id="image-grid">
-          <!-- Images will be inserted here dynamically -->
+
+        <!-- Hidden Disabilities Section -->
+        <h3 class="mt-5">Hidden Disabilities</h3>
+        <p>
+          Hidden disabilities are not immediately noticeable, yet they
+          profoundly impact daily life. Hover or click on these images to reveal
+          the person behind the unseen challenges.
+        </p>
+
+        <div
+          class="row row-cols-1 row-cols-md-3 g-4"
+          id="hidden-disability-grid"
+        >
+          <!-- Hidden Disability Images will be inserted dynamically -->
+        </div>
+
+        <!-- Seen Disabilities Section -->
+        <h3 class="mt-5">Seen Disabilities</h3>
+        <p>
+          Seen disabilities are often the first thing people notice, sometimes
+          overshadowing the individual’s identity. Hover or click on these
+          images to clear the blur and see the person, not just the disability.
+        </p>
+
+        <div class="row row-cols-1 row-cols-md-3 g-4" id="seen-disability-grid">
+          <!-- Seen Disability Images will be inserted dynamically -->
         </div>
       </div>
 
       <!-- MASK SECTION - END -->
+
       <div class="line"></div>
       <div class="container mt-5 text-center" id="submission7">
         <section aria-labelledby="video-section-title">
@@ -2472,37 +2520,119 @@
       }
     </script>
     <script>
-      // Array of different images for each row
-      const images = [
-        "images/hidden__image1.png",
-        "images/hidden__image1.png",
-        "images/hidden__image1.png",
-        "images/hidden__image1.png",
-        "images/hidden__image1.png",
-        "images/hidden__image1.png",
-        "images/hidden__image1.png",
-        "images/hidden__image1.png",
-        "images/hidden__image1.png",
+      // Hidden Disabilities - Sliding Cover
+      const hiddenDisabilityImages = [
+        {
+          src: "images/hidden__image1.png",
+          caption: "Autism",
+        },
+        {
+          src: "images/hidden__image1.png",
+          caption: "ADHD",
+        },
+        {
+          src: "images/hidden__image1.png",
+          caption: "AuDHD",
+        },
+        {
+          src: "images/hidden__image1.png",
+          caption: "Dyslexia",
+        },
+        {
+          src: "images/hidden__image1.png",
+          caption: "Chronic Fatigue Syndrome",
+        },
+        {
+          src: "images/hidden__image1.png",
+          caption: "Mental Health Conditions",
+        },
+        {
+          src: "images/hidden__image1.png",
+          caption: "Sensory Processing Disorder",
+        },
+        {
+          src: "images/hidden__image1.png",
+          caption: "PTSD",
+        },
+        {
+          src: "images/hidden__image1.png",
+          caption: "Fibromyalgia",
+        },
       ];
 
-      // Select the image grid container
-      const grid = document.getElementById("image-grid");
+      const hiddenGrid = document.getElementById("hidden-disability-grid");
 
-      // Generate grid items dynamically
-      images.forEach((imageSrc) => {
+      hiddenDisabilityImages.forEach((image) => {
         const col = document.createElement("div");
         col.className = "col";
         col.innerHTML = `
-          <div class="image-container-cover" tabindex="0" onclick="toggleCover(this)">
-              <img src="${imageSrc}" alt="Unmasked portrait" class="img-fluid-cover rounded shadow">
-              <div class="cover">My Hidden <br />Disability<br /> is</div>
+          <div class="hidden-disability" tabindex="0" onclick="toggleCover(this)">
+              <img src="${image.src}" alt="${image.caption}" class="rounded shadow">
+              <div class="cover">Hidden <br>${image.caption}</div>
           </div>
       `;
-        grid.appendChild(col);
+        hiddenGrid.appendChild(col);
       });
 
-      // Toggle cover function for click interaction
       function toggleCover(element) {
+        element.classList.toggle("active");
+      }
+
+      // Seen Disabilities - Blur Effect
+      const seenDisabilityImages = [
+        {
+          src: "images/hidden__image1.png",
+          caption: "Wheelchair User",
+        },
+        {
+          src: "images/hidden__image1.png",
+          caption: "Living with Cerebral Palsy",
+        },
+        {
+          src: "images/hidden__image1.png",
+          caption: "Using a Mobility Aid",
+        },
+        {
+          src: "images/hidden__image1.png",
+          caption: "Navigating with Visual Impairment",
+        },
+        {
+          src: "images/hidden__image1.png",
+          caption: "Person with a Prosthetic Leg",
+        },
+        {
+          src: "images/hidden__image1.png",
+          caption: "Using a Hearing Aid",
+        },
+        {
+          src: "images/hidden__image1.png",
+          caption: "Student with Spinal Injury",
+        },
+        {
+          src: "images/hidden__image1.png",
+          caption: "Using Assistive Technology",
+        },
+        {
+          src: "images/hidden__image1.png",
+          caption: "Using Orthopedic Braces",
+        },
+      ];
+
+      const seenGrid = document.getElementById("seen-disability-grid");
+
+      seenDisabilityImages.forEach((image) => {
+        const col = document.createElement("div");
+        col.className = "col";
+        col.innerHTML = `
+          <div class="seen-disability" tabindex="0" onclick="toggleBlur(this)">
+              <img src="${image.src}" alt="${image.caption}" class="rounded shadow">
+              <div class="caption">${image.caption}</div>
+          </div>
+      `;
+        seenGrid.appendChild(col);
+      });
+
+      function toggleBlur(element) {
         element.classList.toggle("active");
       }
     </script>
