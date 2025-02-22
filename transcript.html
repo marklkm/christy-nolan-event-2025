@@ -2,19 +2,42 @@
 <html lang="en-US">
   <head>
     <meta charset="UTF-8" />
-    <title>Art for Action - Online Guide</title>
+    <title>Christy Nolan "Perseverance Through Words" Online Guide</title>
     <link rel="shortcut icon" href="favicon_io/favicon.ico" />
     <meta http-equiv="X-UA-Compatible" content="IE=edge" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <meta
+      property="og:title"
+      content="Christy Nolan Perserverance Through Words"
+    />
+    <meta
+      property="og:description"
+      content="The Perseverance Through Words
+    competition celebrates Christy Nolan's legacy and empowers disabled students
+    and staff at Trinity College Dublin to showcase their creativity."
+    />
+    <meta
+      property="og:image"
+      content="https://marklkm.github.io/christy-nolan-event-2025/images/christy-nolan-event-flyer.png"
+    />
+    <meta
+      property="og:url"
+      content="https://marklkm.github.io/christy-nolan-event-2025/"
+    />
+    <meta name="twitter:card" content="summary_large_image" />
+    <meta
       name="keywords"
-      content="Art for Action, Building and Inclusive Future, Disability, disAbility Service, Art, Printing House Square, An Mheitheal"
+      content="Christy Nolan, Perserverance through Words, Creative Competition, Disability, Tribute, disAbility Service, Trinity Libraries"
     />
     <meta
       name="description"
-      content="Art for Action is an inclusive art exhibition aimed at empowering disabled students to express their perspectives and creativity through art. Held from 3-6 December 2024, at Mheitheal - Printing House Square. Join us in building an inclusive future where art serves as a bridge for advocacy, and change."
+      content="The Perseverance Through Words competition celebrates Christy Nolan's legacy and empowers disabled students and staff at Trinity College Dublin to showcase their creativity."
     />
     <link rel="stylesheet" href="style.css" />
+    <link
+      rel="stylesheet"
+      href="https://cdn.jsdelivr.net/npm/open-dyslexic@0.0.4/open-dyslexic.min.css"
+    />
     <link
       rel="stylesheet"
       href="https://cdnjs.cloudflare.com/ajax/libs/bootstrap-icons/1.9.1/font/bootstrap-icons.min.css"
@@ -24,10 +47,99 @@
       rel="stylesheet"
     />
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/js/bootstrap.bundle.min.js"></script>
+
     <style>
       /* Set a maximum width for the logos to make them smaller */
       .logo {
         max-width: 300px; /* Adjust this value as needed */
+      }
+    </style>
+    <style>
+      /* Custom styles for left alignment and better readability */
+      .code-wrapper {
+        overflow-x: auto; /* Horizontal scrolling on mobile */
+        padding: 1rem; /* Add padding for readability */
+        background-color: #f8f9fa; /* Light background for contrast */
+      }
+      pre {
+        white-space: pre-wrap; /* Wrap long lines to fit within container */
+        word-wrap: break-word; /* Break words to prevent overflow */
+        text-align: left; /* Align text to the left */
+        margin: 0; /* Remove extra margin */
+      }
+      code {
+        font-family: "Courier New", monospace; /* Monospaced font for code */
+        font-size: 0.9rem; /* Slightly smaller font for mobile readability */
+      }
+    </style>
+    <style>
+      /* Hidden Disabilities - Sliding Cover */
+      .hidden-disability {
+        position: relative;
+        display: inline-block;
+        width: 100%;
+        cursor: pointer;
+        overflow: hidden;
+      }
+
+      .hidden-disability img {
+        width: 100%;
+        height: auto;
+        display: block;
+      }
+
+      .hidden-disability .cover {
+        position: absolute;
+        top: 0;
+        left: 0;
+        width: 100%;
+        height: 100%;
+        background-color: lightblue;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        font-size: 1.5rem;
+        font-weight: bold;
+        color: black;
+        text-align: center;
+        transition: transform 0.5s ease-in-out;
+        transform: translateY(0);
+      }
+
+      .hidden-disability:hover .cover,
+      .hidden-disability:focus-within .cover,
+      .hidden-disability.active .cover {
+        transform: translateY(100%);
+      }
+
+      /* Seen Disabilities - Blur Effect */
+      .seen-disability {
+        position: relative;
+        display: inline-block;
+        width: 100%;
+        cursor: pointer;
+        overflow: hidden;
+      }
+
+      .seen-disability img {
+        width: 100%;
+        height: auto;
+        display: block;
+        filter: blur(5px);
+        transition: filter 0.5s ease-in-out;
+      }
+
+      .seen-disability:hover img,
+      .seen-disability:focus-within img,
+      .seen-disability.active img {
+        filter: blur(0);
+      }
+
+      .caption {
+        text-align: center;
+        font-weight: bold;
+        margin-top: 10px;
+        font-size: 1.2rem;
       }
     </style>
     <script type="text/javascript">
@@ -63,13 +175,13 @@
     <nav class="navbar navbar-expand-lg navbar-light bg-custom-red sticky-top">
       <div class="container">
         <!-- Logo image that adjusts based on screen size -->
-        <a class="navbar-brand" href="index.html">
+        <a class="navbar-brand" href="#">
           <img
             src="images/disability_hub_purple_logo.png"
             class="lazyload img-fluid logo-image"
             alt="Trinity disAbility Hub logo"
-            width="150"
-            height="150"
+            width="180"
+            height="180"
           />
         </a>
 
@@ -94,18 +206,19 @@
         <div class="collapse navbar-collapse" id="navbarNav" role="navigation">
           <ul class="navbar-nav ms-auto">
             <li class="nav-item">
-              <a class="nav-link" href="index.html#onlineguide">Online Guide</a>
+              <a class="nav-link" href="#">Home</a>
             </li>
             <li class="nav-item">
-              <a class="nav-link" href="index.html#background">Background</a>
+              <a class="nav-link" href="#onlineguide">Online Guide</a>
             </li>
             <li class="nav-item">
-              <a class="nav-link" href="index.html#artexhibitors"
-                >Art Exhibitors</a
-              >
+              <a class="nav-link" href="#overview">Overview</a>
             </li>
             <li class="nav-item">
-              <a class="nav-link" href="transcript.html">Transcript</a>
+              <a class="nav-link" href="#submissions">Art Submissions</a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link" href="#">Transcript</a>
             </li>
           </ul>
         </div>
@@ -113,8 +226,9 @@
     </nav>
     <main id="maincontent" tabindex="0" class="container" role="main">
       <h1 id="transcript-heading" class="text-center my-5">
-        Art for Action Transcript
+        Perseverance Through Words Transcript
       </h1>
+      <h2 class="text-center my-5">A Tribute to Christy Nolan</h2>
       <section class="container my-4">
         <div class="text-center">
           <h2 class="mb-4">
@@ -179,6 +293,22 @@
         class="container my-5 p-4"
         aria-labelledby="transcript-heading"
       >
+        <p id="expandInfoHelp" class="text-muted small">
+          Click the down chevron to expand the section for more details.
+        </p>
+
+        <button
+          class="btn btn-primary d-flex align-items-center mt-3 mb-3"
+          type="button"
+          data-bs-toggle="collapse"
+          data-bs-target="#moreInfo"
+          aria-expanded="false"
+          aria-controls="moreInfo"
+          aria-describedby="expandInfoHelp"
+        >
+          More Information
+          <span class="ms-2 chevron">⬇️</span>
+        </button>
         <div class="accordion" id="transcriptAccordion">
           <div class="accordion-item">
             <h3 class="accordion-header" id="artistOneHeading">
@@ -190,7 +320,7 @@
                 aria-expanded="true"
                 aria-controls="artistOne"
               >
-                Submission 1 - Christian Keller
+                Submission #1
               </button>
             </h3>
             <div
@@ -200,136 +330,70 @@
               data-bs-parent="#transcriptAccordion"
             >
               <div class="accordion-body">
-                <h4>What is this series?</h4>
-                <p>
-                  This series is about my personal experience being
-                  neurodivergent in the modern world. Being late diagnosed, it
-                  can be difficult to express my true thoughts without the
-                  feeling of scrutiny creeping in. This is why I'm very proud to
-                  be part of an exhibition that uplifts artists in the same
-                  position as me and strives to spread the positive message of
-                  unity.
-                </p>
-                <h4>What is art to me?</h4>
-                <p>
-                  As you may be able to recognize from the poems in this series,
-                  art is to me what it is for most - an outlet for your soul.
-                  However, I believe it can be used to promote positive change
-                  and feelings, and this angle, to me, is when art is at its
-                  finest.
-                </p>
                 <h4>
-                  What role does art play in building an inclusive future?
+                  How did the Christy Nolan quote you chose to use influence the
+                  direction or meaning of your work, and why did you feel it
+                  resonated with your personal experiences?
                 </h4>
                 <p>
-                  As previously mentioned, art's promotion of positive change is
-                  crucial in building something beautiful. Perhaps one day the
-                  right words, or lyrics, or any sculpture of feeling can tug
-                  the heartstrings of those who never knew they had any to begin
-                  with.
-                </p>
-                <h4>Christian Keller - Neurodivergent Artist Series - Q & A</h4>
-                <p>
-                  ALT Description: An image with an orange border featuring text
-                  blocks describing a neurodivergent artist's experience, their
-                  view on art, and its role in building an inclusive future.
-                  Below, there's a photo of a water lily pond with large green
-                  leaves, a red flower in the foreground, and a plant label
-                  reading "Victoria cruziana." The design highlights unity,
-                  personal expression, and the impact of art on positive change.
+                  I was drawn to the quote, 'Though I speak in silence, my words
+                  echo with truth,' because it captures the tension between
+                  feeling unheard and knowing our experiences still carry
+                  weight. As someone who uses alternative communication methods,
+                  I've often felt that my voice isn't fully recognized. Yet, I
+                  believe that even the quiet or unconventional ways we express
+                  ourselves can resonate powerfully. Christy Nolan's words gave
+                  me the confidence to highlight this quiet strength in my
+                  piece—conveying how, despite the seeming 'silence,' our truths
+                  can create ripples of understanding and empathy in others.
                 </p>
                 <h4>
-                  Christian Keller - Neurodivergent Artist Series - Shimmer
+                  What was your process for developing the piece, and did you
+                  encounter any particular challenges - whether artistic,
+                  technical, or related to accessibility - that shaped the final
+                  result?
                 </h4>
                 <p>
-                  ALT Description: A split image featuring a poem titled
-                  "Shimmer" by C. Keller on a cream background with red borders
-                  at the top. The poem reflects on the passage of time,
-                  self-reflection, and the search for meaning. Below the poem, a
-                  vibrant photograph showcases a serene lake surrounded by a
-                  forest of autumn-colored trees with their reflections mirrored
-                  in the water. A small house with red and white accents sits
-                  peacefully by the lakeside under a bright blue sky.
-                </p>
-                <h4>Christan Keller - Shimmer</h4>
-                <p>
-                  And all day that were and when,<br />
-                  I never took it, all, within the clock<br />
-                  Hung and dragged by the minute's hand,<br />
-                  Too slow to reveal life itself,<br />
-                  The blood streaks lead to full circle.<br />
-                  In never ending thought of something new.<br />
-                  And off in search of higher waters,<br />
-                  They brave the sea once more for cod.<br />
-                  But conned by the loch's promise of forever,<br />
-                  They're drowned by their own conscience,<br />
-                  Living in time, in essence, but,<br />
-                  In never ending thought of something new.<br />
-                  <i>C. Keller</i>
+                  I began by sketching out a rough concept inspired by the
+                  Christy Nolan quote I'd chosen, focusing on themes of
+                  resilience and self-discovery. From there, I experimented with
+                  different mediums—charcoal, watercolor, and digital
+                  tools—until I found the combination that best conveyed the
+                  idea of emerging strength. One significant challenge I faced
+                  was adapting my workspace to accommodate my physical
+                  limitations: I needed specialized tools with better grip and
+                  ergonomic design to reduce strain. This, in turn, led me to
+                  explore more tactile techniques and texture in my piece.
+                  Although it was time-consuming to test and refine these
+                  methods, the 2 experience ultimately helped me create a more
+                  layered, visually engaging artwork that truly represents my
+                  journey.
                 </p>
                 <h4>
-                  Christian Keller - Neurodivergent Artist Series - The
-                  Impossibility of Severing One's Self (TIOSOS)
+                  In exploring perseverance, identity, and creative expression,
+                  what core message or insight do you hope viewers, readers, or
+                  listeners will take away from your piece?
                 </h4>
                 <p>
-                  ALT Description: A split image featuring a poem titled "The
-                  Impossibility Of Severing One's Self" by C. Keller on a cream
-                  background with green borders at the top. The poem explores
-                  themes of escape, connection to nature, and inner peace
-                  through vivid imagery and introspection. Below the poem, a
-                  serene photograph shows a misty forest with tall evergreen
-                  trees partially shrouded in fog, evoking a sense of calm and
-                  introspection.
+                  I hope that my piece reminds people that perseverance is not
+                  just about pushing through difficult circumstances—it's also
+                  about embracing your own story and identity in the process. By
+                  weaving together visuals and narration that reflect personal
+                  growth, I wanted to show how creative expression can transform
+                  our struggles into something powerful and unifying.
+                  Ultimately, my aim is for anyone experiencing the work to feel
+                  seen and encouraged to use their own voice, recognizing that
+                  every unique perspective adds depth and beauty to our shared
+                  human experience.
                 </p>
                 <h4>
-                  Christian Keller - The Impossibility of Severing One's Self
+                  Submission #1 - Though I speak in silence, my words speak the
+                  truth
                 </h4>
                 <p>
-                  Escape is often defined as a freedom of the will<br />
-                  An essential in your finest hours<br />
-                  My brain however works different to 'ours'<br />
-                  I eat the Earth and chew the pill.<br />
-                  When I cry I have to write<br />
-                  I know I'll never reach the scenes of the screen<br />
-                  The field, the forest, calling me<br />
-                  To end the noise that plagues the plight.<br />
-                  But could I take the noise's end?<br />
-                  Nature tells me whispers I know<br />
-                  All too well. The dove or the crow?<br />
-                  Or the gruesome cliff, and edge.<br />
-                  But as I lay in heaven's bed I feel the breeze<br />
-                  Warmed by the blue and the flowers I owe<br />
-                  The feeling of peace as my leaf is blown<br />
-                  As my words and I float among the trees.<br />
-                  <i>C. Keller</i>
-                </p>
-                <h4>Christian Keller - Windmill</h4>
-                <p>
-                  ALT Description: A split image featuring a poem titled
-                  "Windmill" by C. Keller on a cream background with blue-gray
-                  borders. The poem reflects on the timeless presence and
-                  contemplative nature of a windmill, exploring themes of
-                  stillness, science, and the significance of silence. Below the
-                  poem, a black-and-white photograph showcases two traditional
-                  windmills by the water, with rippling waves in the foreground
-                  and soft clouds in the sky, creating a serene and nostalgic
-                  atmosphere.
-                </p>
-                <h4>Christian Keller - Windmill</h4>
-                <p>
-                  And splayed in hayfield, time nor place<br />
-                  I and all stop to watch it mill<br />
-                  Its great structure intimidates face<br />
-                  And crane enough to up to thrill<br />
-                  But today it's not fortune that keeps pace<br />
-                  I must admit when thought is killed<br />
-                  I yearn to know the cold embrace<br />
-                  For each to know how each is still<br />
-                  A signal wisp, wistful, whispers science<br />
-                  They're still capable of any<br />
-                  A single sound amidst the silence<br />
-                  Is more palpable than the many.<br />
-                  <i>C. Keller</i>
+                  ALT Description: A mixed-media illustration of a male figure
+                  emerging from a swirl of layered textures, symbolizing
+                  resilience and self-discovery.
                 </p>
               </div>
             </div>
@@ -344,7 +408,7 @@
                 aria-expanded="false"
                 aria-controls="artistTwo"
               >
-                Submission 2 - Joanne Touhey
+                Submission #2
               </button>
             </h3>
             <div
@@ -354,66 +418,70 @@
               data-bs-parent="#transcriptAccordion"
             >
               <div class="accordion-body">
-                <h4>Very brief description of the work:</h4>
-                <p>
-                  My piece, "In the Silence, We Hear," is a visual and poetic
-                  reflection on hearing loss. It features a poem paired with the
-                  word "inclusion" in sign language. The piece expresses the
-                  quiet strength of those, including myself, who navigate a
-                  world without full hearing.
-                </p>
-                <h4>What does art mean to you?</h4>
-                <p>
-                  To me, art is a voice beyond words. It is a way to express
-                  emotions, experiences, and perspectives that cannot always be
-                  easily shared. Art connects us, even when we face barriers.
-                </p>
                 <h4>
-                  In your opinion, what role does art play in building an
-                  inclusive future?
+                  How did the Christy Nolan quote you chose to use influence the
+                  direction or meaning of your work, and why did you feel it
+                  resonated with your personal experiences?
                 </h4>
                 <p>
-                  Writing allows us to share personal stories that might
-                  otherwise go unheard. By giving voice to our struggles and
-                  perspectives, written or visual art becomes a bridge to
-                  understanding. It's a therapeutic and healing process that
-                  opens doors for empathy, helping others connect with different
-                  experiences. In this way, art plays a crucial role in building
-                  a more inclusive and compassionate future.
+                  I was drawn to the quote, 'Though I speak in silence, my words
+                  echo with truth,' because it captures the tension between
+                  feeling unheard and knowing our experiences still carry
+                  weight. As someone who uses alternative communication methods,
+                  I've often felt that my voice isn't fully recognized. Yet, I
+                  believe that even the quiet or unconventional ways we express
+                  ourselves can resonate powerfully. Christy Nolan's words gave
+                  me the confidence to highlight this quiet strength in my
+                  piece—conveying how, despite the seeming 'silence,' our truths
+                  can create ripples of understanding and empathy in others.
                 </p>
-                <h4>Joanne Touhey - In the Silence, We Hear</h4>
+                <h4>
+                  What was your process for developing the piece, and did you
+                  encounter any particular challenges - whether artistic,
+                  technical, or related to accessibility - that shaped the final
+                  result?
+                </h4>
                 <p>
-                  ALT Description: An illustration titled "In the Silence, We
-                  Hear" featuring hand signs forming letters of the alphabet in
-                  Irish Sign Language (ISL), with hands of diverse skin tones.
-                  Below the illustration, a poem explores themes of living in
-                  silence, navigating a quiet world, and embracing differences.
-                  It emphasizes that silence is not emptiness but full of
-                  unspoken meaning, calling for understanding and breaking
-                  through barriers together. The design combines accessibility
-                  awareness with inclusivity and empowerment.
+                  I began by sketching out a rough concept inspired by the
+                  Christy Nolan quote I'd chosen, focusing on themes of
+                  resilience and self-discovery. From there, I experimented with
+                  different mediums—charcoal, watercolor, and digital
+                  tools—until I found the combination that best conveyed the
+                  idea of emerging strength. One significant challenge I faced
+                  was adapting my workspace to accommodate my physical
+                  limitations: I needed specialized tools with better grip and
+                  ergonomic design to reduce strain. This, in turn, led me to
+                  explore more tactile techniques and texture in my piece.
+                  Although it was time-consuming to test and refine these
+                  methods, the 2 experience ultimately helped me create a more
+                  layered, visually engaging artwork that truly represents my
+                  journey.
                 </p>
-
-                <h4>Joanne Touhey - In the Silence, We Hear</h4>
+                <h4>
+                  In exploring perseverance, identity, and creative expression,
+                  what core message or insight do you hope viewers, readers, or
+                  listeners will take away from your piece?
+                </h4>
                 <p>
-                  (Displays fingerspelling in Irish Sign Language for
-                  "Listen.")<br />
-                  You live in the space between words<br />
-                  ~<br />
-                  People think you don't hear them, but you do<br />
-                  ~<br />
-                  Sound slips through your fingers like water<br />
-                  ~<br />
-                  You have learned to navigate this quiet world, to read lips
-                  like pages and feel vibrations of words<br />
-                  ~<br />
-                  You're not less, just different<br />
-                  ~<br />
-                  You don't need to be fixed—just understood<br />
-                  ~<br />
-                  Silence isn't empty; it's full of what goes unsaid<br />
-                  ~<br />
-                  Together, we can break through the silence<br />
+                  I hope that my piece reminds people that perseverance is not
+                  just about pushing through difficult circumstances—it's also
+                  about embracing your own story and identity in the process. By
+                  weaving together visuals and narration that reflect personal
+                  growth, I wanted to show how creative expression can transform
+                  our struggles into something powerful and unifying.
+                  Ultimately, my aim is for anyone experiencing the work to feel
+                  seen and encouraged to use their own voice, recognizing that
+                  every unique perspective adds depth and beauty to our shared
+                  human experience.
+                </p>
+                <h4>
+                  Submission #2 - Though I speak in silence, my words speak the
+                  truth
+                </h4>
+                <p>
+                  ALT Description: A mixed-media illustration of a male figure
+                  emerging from a swirl of layered textures, symbolizing
+                  resilience and self-discovery.
                 </p>
               </div>
             </div>
@@ -429,7 +497,7 @@
                 aria-expanded="false"
                 aria-controls="artistThree"
               >
-                Submission 3 - Sadbh Caulfield
+                Submission #3
               </button>
             </h3>
             <div
@@ -439,75 +507,70 @@
               data-bs-parent="#transcriptAccordion"
             >
               <div class="accordion-body">
-                <h4>Sadbh Caulfield - Worshiping the problem</h4>
+                <h4>
+                  How did the Christy Nolan quote you chose to use influence the
+                  direction or meaning of your work, and why did you feel it
+                  resonated with your personal experiences?
+                </h4>
                 <p>
-                  This is for my mum. “Worrying is worshiping the problem” is
-                  something my mum has started saying to me recently and it
-                  stuck with me. The two graphics represent the spiral an
-                  anxiety attack can cause. The grid and abstract spacing
-                  represents the struggle to be grounded and remember that it is
-                  only worshipping the problem.
+                  I was drawn to the quote, 'Though I speak in silence, my words
+                  echo with truth,' because it captures the tension between
+                  feeling unheard and knowing our experiences still carry
+                  weight. As someone who uses alternative communication methods,
+                  I've often felt that my voice isn't fully recognized. Yet, I
+                  believe that even the quiet or unconventional ways we express
+                  ourselves can resonate powerfully. Christy Nolan's words gave
+                  me the confidence to highlight this quiet strength in my
+                  piece—conveying how, despite the seeming 'silence,' our truths
+                  can create ripples of understanding and empathy in others.
                 </p>
+                <h4>
+                  What was your process for developing the piece, and did you
+                  encounter any particular challenges - whether artistic,
+                  technical, or related to accessibility - that shaped the final
+                  result?
+                </h4>
                 <p>
-                  ALT Description: A grid-based design with alternating red and
-                  white squares, featuring hand-drawn illustrations and bold
-                  black text. The top row includes an illustration of hands
-                  creating a cat's cradle string figure. Below it, text reads:
-                  "Worrying is worshiping the problem." Additional squares
-                  include an illustration of a person standing next to a
-                  spherical diagram labeled "Horizon" and "Now." The bottom-left
-                  square states, "Redirect the energy toward solutions, hope,
-                  and trust in the process." The design emphasizes reflection,
-                  mindfulness, and focusing energy positively.
+                  I began by sketching out a rough concept inspired by the
+                  Christy Nolan quote I'd chosen, focusing on themes of
+                  resilience and self-discovery. From there, I experimented with
+                  different mediums—charcoal, watercolor, and digital
+                  tools—until I found the combination that best conveyed the
+                  idea of emerging strength. One significant challenge I faced
+                  was adapting my workspace to accommodate my physical
+                  limitations: I needed specialized tools with better grip and
+                  ergonomic design to reduce strain. This, in turn, led me to
+                  explore more tactile techniques and texture in my piece.
+                  Although it was time-consuming to test and refine these
+                  methods, the 2 experience ultimately helped me create a more
+                  layered, visually engaging artwork that truly represents my
+                  journey.
                 </p>
-                <h4>Sadbh Caulfield - What If?</h4>
+                <h4>
+                  In exploring perseverance, identity, and creative expression,
+                  what core message or insight do you hope viewers, readers, or
+                  listeners will take away from your piece?
+                </h4>
                 <p>
-                  This is a piece representing a form of OCD that I have lived
-                  with for most of my life. Constant 'what if?' scenarios would
-                  come into my mind, paired with compulsions. And then I saw
-                  this quote of “What if it all works out?” Which flipped the
-                  narrative.
+                  I hope that my piece reminds people that perseverance is not
+                  just about pushing through difficult circumstances—it's also
+                  about embracing your own story and identity in the process. By
+                  weaving together visuals and narration that reflect personal
+                  growth, I wanted to show how creative expression can transform
+                  our struggles into something powerful and unifying.
+                  Ultimately, my aim is for anyone experiencing the work to feel
+                  seen and encouraged to use their own voice, recognizing that
+                  every unique perspective adds depth and beauty to our shared
+                  human experience.
                 </p>
+                <h4>
+                  Submission #3 - Though I speak in silence, my words speak the
+                  truth
+                </h4>
                 <p>
-                  ALT Description: A gray textured background featuring the
-                  bold, distressed text "WHAT IF?" at the top in a fragmented,
-                  edgy font. Below, vertical and diagonal phrases in varying
-                  alignments repeat anxious thoughts such as "Check it," "Count
-                  to five," "Don't step on the crack," and "Rewrite it." At the
-                  bottom, subtle embossed text reads, "What if it all works
-                  out?" The design captures a contrast between worry and hope,
-                  exploring themes of overthinking and optimism.
-                </p>
-                <h4>Sadbh Caulfield - What If?</h4>
-                <p>
-                  (Tilted text running vertically in different directions and
-                  fonts reads:)<br />
-                  • TOUCH THE DOOR BALANCE IT OUT READ IT AGAIN<br />
-                  • BALANCE IT OUT DON'T LOOK AT IT<br />
-                  • COUNT TO TEN BALANCE IT OUT<br />
-                  • CHECK IT DON'T LOOK AT IT COUNT TO FIVE<br />
-                  • DON'T TEXT THAT<br />
-                  • DON'T STEP ON THE CRACK<br />
-                  • DON'T TAKE SHORTCUTS<br />
-                  • MAKE SURE THEY UNDERSTAND<br />
-                  • CHECK THEY UNDERSTAND<br />
-                  • LOOK UP<br />
-                  • MAKE SURE YOUR SHOES ARE STRAIGHTENED<br />
-                  • DON'T EAT THAT<br />
-                  • CHECK IT DON'T STEP ON THE CRACK<br />
-                  • CHECK FOR A FIRE DON'T SAY THAT CHECK IT<br />
-                  • CHECK IT'S OFF<br />
-                  • REWRITE IT<br />
-                  • CHECK IT'S OFF<br />
-                  • CHECK FOR A FIRE<br />
-                  • CHECK YOUR LAPTOP'S OFF<br />
-                  • COUNT TO TEN<br />
-                  • DON'T LOOK AT IT<br />
-                  • BALANCE IT OUT<br />
-                  • COUNT TO FIVE<br />
-                  • READ IT AGAIN<br />
-                  (At the bottom in large, faint text:)<br />
-                  WHAT IF IT ALL WORKS OUT?
+                  ALT Description: A mixed-media illustration of a male figure
+                  emerging from a swirl of layered textures, symbolizing
+                  resilience and self-discovery.
                 </p>
               </div>
             </div>
@@ -525,7 +588,7 @@
                 aria-expanded="false"
                 aria-controls="artistFour"
               >
-                Submission 4 - Holly Wolohan
+                Submission #4
               </button>
             </h3>
             <div
@@ -535,35 +598,70 @@
               data-bs-parent="#transcriptAccordion"
             >
               <div class="accordion-body">
-                <h4>Holly Wolohan - River Collection</h4>
+                <h4>
+                  How did the Christy Nolan quote you chose to use influence the
+                  direction or meaning of your work, and why did you feel it
+                  resonated with your personal experiences?
+                </h4>
                 <p>
-                  ALT Description: This image features a bilingual poem titled
-                  Sruthmheabhair na hAbhann (River Recollection) in both Irish
-                  and English, displayed on a blue brushstroke-like background
-                  with decorative white cloud motifs. The poem reflects on
-                  personal growth, learning, and life's journey using metaphors
-                  of rivers and flowing currents. The poet, Cuileann Ní
-                  Uallacháin, is credited at the bottom. The visual elements
-                  emphasize fluidity and introspection, complementing the themes
-                  of the poem.
+                  I was drawn to the quote, 'Though I speak in silence, my words
+                  echo with truth,' because it captures the tension between
+                  feeling unheard and knowing our experiences still carry
+                  weight. As someone who uses alternative communication methods,
+                  I've often felt that my voice isn't fully recognized. Yet, I
+                  believe that even the quiet or unconventional ways we express
+                  ourselves can resonate powerfully. Christy Nolan's words gave
+                  me the confidence to highlight this quiet strength in my
+                  piece—conveying how, despite the seeming 'silence,' our truths
+                  can create ripples of understanding and empathy in others.
                 </p>
-                <h4>Holly Wolohan - River Collection</h4>
+                <h4>
+                  What was your process for developing the piece, and did you
+                  encounter any particular challenges - whether artistic,
+                  technical, or related to accessibility - that shaped the final
+                  result?
+                </h4>
                 <p>
-                  Nuair a bhí mé i mo óg | During the days of my youth <br />
-                  Chas mé timpeall ag an abhainn. | I turned around at the
-                  river.<br />
-                  Cos lag, guth ciotach | Halting speech, lagging footsteps<br />
-                  Ceann ag meabhrú go domhain. | An intellect keen to
-                  deliver.<br />
-                  Ag foghlaim an siúl agus na focal | Learning the steps and
-                  word structures<br />
-                  Arís is arís go deo. | Again and again once more,<br />
-                  Céim thart, céim siar, | One learnt, one left,<br />
-                  Bhuail an saol i mo threo | Life hit me with its currents
-                  galore<br />
-                  Ag tarraingt an chiall as an cheo. | Pulling sense out of fog
-                  to the fore.<br />
-                  <i>Cuileann Ní Uallacháin</i>
+                  I began by sketching out a rough concept inspired by the
+                  Christy Nolan quote I'd chosen, focusing on themes of
+                  resilience and self-discovery. From there, I experimented with
+                  different mediums—charcoal, watercolor, and digital
+                  tools—until I found the combination that best conveyed the
+                  idea of emerging strength. One significant challenge I faced
+                  was adapting my workspace to accommodate my physical
+                  limitations: I needed specialized tools with better grip and
+                  ergonomic design to reduce strain. This, in turn, led me to
+                  explore more tactile techniques and texture in my piece.
+                  Although it was time-consuming to test and refine these
+                  methods, the 2 experience ultimately helped me create a more
+                  layered, visually engaging artwork that truly represents my
+                  journey.
+                </p>
+                <h4>
+                  In exploring perseverance, identity, and creative expression,
+                  what core message or insight do you hope viewers, readers, or
+                  listeners will take away from your piece?
+                </h4>
+                <p>
+                  I hope that my piece reminds people that perseverance is not
+                  just about pushing through difficult circumstances—it's also
+                  about embracing your own story and identity in the process. By
+                  weaving together visuals and narration that reflect personal
+                  growth, I wanted to show how creative expression can transform
+                  our struggles into something powerful and unifying.
+                  Ultimately, my aim is for anyone experiencing the work to feel
+                  seen and encouraged to use their own voice, recognizing that
+                  every unique perspective adds depth and beauty to our shared
+                  human experience.
+                </p>
+                <h4>
+                  Submission #4 - Though I speak in silence, my words speak the
+                  truth
+                </h4>
+                <p>
+                  ALT Description: A mixed-media illustration of a male figure
+                  emerging from a swirl of layered textures, symbolizing
+                  resilience and self-discovery.
                 </p>
               </div>
             </div>
@@ -581,7 +679,7 @@
                 aria-expanded="false"
                 aria-controls="artistFive"
               >
-                Submission 5 - Jessica K. Doyle
+                Submission #5
               </button>
             </h3>
             <div
@@ -591,274 +689,70 @@
               data-bs-parent="#transcriptAccordion"
             >
               <div class="accordion-body">
-                <h4>Explanation of Poems Jessica K. Doyle</h4>
+                <h4>
+                  How did the Christy Nolan quote you chose to use influence the
+                  direction or meaning of your work, and why did you feel it
+                  resonated with your personal experiences?
+                </h4>
                 <p>
-                  <strong>Trains</strong> was written after my first day of
-                  college, during a moment of reflection as I waited for the
-                  train. While I stood in stillness, observing, others buzzed
-                  with anticipation, and the poem captures this contrast—a quiet
-                  contemplation of transition and movement and diverse
-                  perceptions.
+                  I was drawn to the quote, 'Though I speak in silence, my words
+                  echo with truth,' because it captures the tension between
+                  feeling unheard and knowing our experiences still carry
+                  weight. As someone who uses alternative communication methods,
+                  I've often felt that my voice isn't fully recognized. Yet, I
+                  believe that even the quiet or unconventional ways we express
+                  ourselves can resonate powerfully. Christy Nolan's words gave
+                  me the confidence to highlight this quiet strength in my
+                  piece—conveying how, despite the seeming 'silence,' our truths
+                  can create ripples of understanding and empathy in others.
                 </p>
+                <h4>
+                  What was your process for developing the piece, and did you
+                  encounter any particular challenges - whether artistic,
+                  technical, or related to accessibility - that shaped the final
+                  result?
+                </h4>
                 <p>
-                  <strong>Pink Lanes:</strong> emerged instinctively, without a
-                  planned structure, as much of my writing does. It speaks to
-                  the experience of processing something lost yet lingering in
-                  the mind—a journey of processing attempts and plans for more.
+                  I began by sketching out a rough concept inspired by the
+                  Christy Nolan quote I'd chosen, focusing on themes of
+                  resilience and self-discovery. From there, I experimented with
+                  different mediums—charcoal, watercolor, and digital
+                  tools—until I found the combination that best conveyed the
+                  idea of emerging strength. One significant challenge I faced
+                  was adapting my workspace to accommodate my physical
+                  limitations: I needed specialized tools with better grip and
+                  ergonomic design to reduce strain. This, in turn, led me to
+                  explore more tactile techniques and texture in my piece.
+                  Although it was time-consuming to test and refine these
+                  methods, the 2 experience ultimately helped me create a more
+                  layered, visually engaging artwork that truly represents my
+                  journey.
                 </p>
+                <h4>
+                  In exploring perseverance, identity, and creative expression,
+                  what core message or insight do you hope viewers, readers, or
+                  listeners will take away from your piece?
+                </h4>
                 <p>
-                  <strong>Fizzy Feet</strong> explores the beauty of slowing
-                  down and taking scenic routes literally and metaphorically.
-                  Written in a moment of magic and music and connection, Though
-                  not initially about cats, On reflection it reminded me of
-                  moments spent walking with my two cats, where their curiosity
-                  anchors me to the present. Their playful exploration reminds
-                  me of childhood nostalgia—muddy boots stuck in the
-                  muck,—little paws and how nature teaches us to slow down and
-                  immerse ourselves, even in moments of discomfort. The poem is
-                  also about finding growth and reflection in those too-light or
-                  too-tight or uncomfortable spaces and the wonder and growth
-                  one can find in the places we often try to avoid.
+                  I hope that my piece reminds people that perseverance is not
+                  just about pushing through difficult circumstances—it's also
+                  about embracing your own story and identity in the process. By
+                  weaving together visuals and narration that reflect personal
+                  growth, I wanted to show how creative expression can transform
+                  our struggles into something powerful and unifying.
+                  Ultimately, my aim is for anyone experiencing the work to feel
+                  seen and encouraged to use their own voice, recognizing that
+                  every unique perspective adds depth and beauty to our shared
+                  human experience.
                 </p>
+                <h4>
+                  Submission #5 - Though I speak in silence, my words speak the
+                  truth
+                </h4>
                 <p>
-                  <strong>Art</strong>, to me, is a bridge between my inner
-                  world and the external reality—a language that mirrors the way
-                  my thoughts naturally form. It offers a structure that feels
-                  more aligned with how I process and understand the world,
-                  allowing me to translate emotions, ideas, and experiences into
-                  something tangible. Through art, I can express complexities
-                  that often feel impossible to convey with words, giving shape
-                  to what resides within and creating a space where others can
-                  glimpse and connect with my internal landscape
-                </p>
-                <h4>Jessica K. Doyle - Fizzy Feet</h4>
-                <p>
-                  ALT Description: A poem titled Fizzy Feet by Jessica K. Doyle
-                  is written in black text on a soft gradient background of
-                  green and yellow hues. The poem describes themes of
-                  reflection, nostalgia, and finding peace. In the bottom-right
-                  corner, there is a simple black outline drawing of a cat
-                  stepping into a puddle, its tail raised. The illustration adds
-                  a whimsical touch to the contemplative tone of the poem.
-                </p>
-                <h4>Jessica K. Doyle - Fizzy Feet</h4>
-                <p>
-                  <i>By Jessica K. Doyle</i><br />
-                  Wait for me when racing forth<br />
-                  To planes of rushes<br />
-                  And paths of dust<br />
-                  Where weightless feathers<br />
-                  Feel heavy in the wind<br />
-                  Wait a minute don't rush to the end<br />
-                  Stop and fall and crash into a ball<br />
-                  Fractured and beaten, awake to it all<br />
-                  Feel the fizz and whine and pop<br />
-                  Of long lost lands of laughter that's rough<br />
-                  Slow your pace to observe the race<br />
-                  And find yourself get lost in a stream of grace<br />
-                  Wash up in whirl winds<br />
-                  Let sounds pulse through your soul<br />
-                  Sorrowful and sweet<br />
-                  Fizzy in my feet<br />
-                  Breaks through the dams<br />
-                  To these less walked far distant lands<br />
-                  Or maybe there always here<br />
-                  In the everyday<br />
-                  Waiting for the wanderers<br />
-                  To stop awhile and play<br />
-                  Even just a glance through a crack on the door<br />
-                  There always here lying on the floor.<br />
-                  Whisper to me<br />
-                  on gently rocking waters<br />
-                  Call me home<br />
-                  With tendrils of nostalgia<br />
-                  Piece by piece<br />
-                  We'll find our feet<br />
-                  In pieces we'll weep<br />
-                  Till we wash away<br />
-                  what make us screech<br />
-                  In pain, laid down in a heap<br />
-                  We will keep each of us close<br />
-                  in reach<br />
-                  Pitch forward your ideas and don't feel like you have to
-                  run<br />
-                  Be strong in your roots<br />
-                  In water tight boots<br />
-                  Cut through rubber<br />
-                  Toes squelch into wet muck<br />
-                  Licking heels<br />
-                  Look back up<br />
-                  I'm stuck<br />
-                  and that my friend is all it took.
-                </p>
-                <h4>Jessica K. Doyle - Pink Lanes</h4>
-                <p>
-                  ALT Description: A poem titled Pink Lanes by Jessica K. Doyle
-                  is displayed on a white background with splashes of pink and
-                  black ink framing the page. The poem explores themes of pain,
-                  memory, and the struggle for clarity. At the bottom right,
-                  there is a circular abstract illustration in shades of pink,
-                  purple, and teal, resembling a microscopic or cosmic view. The
-                  artwork complements the reflective and introspective tone of
-                  the poem.
-                </p>
-                <h4>Jessica K. Doyle - Pink Lanes</h4>
-                <p>
-                  Pink lanes of pain making tracks through my brain.<br />
-                  Snaking in winding pain.<br />
-                  Burrow down till some days I don't recall<br />
-                  that fraught seeming so tall times that don't ever thaw.<br />
-                  Pink freezing rain smashes<br />
-                  down in the voices that stick,<br />
-                  thick tastes of liquorice.<br />
-                  I'll drown it out when roads roar to life<br />
-                  with nowhere to run and no way to fight.<br />
-                  I know I need to go there to take away its life.<br />
-                  I don't want to welcome anyone in, whether friend or foe<br />
-                  I know I'm going to barricade the door.<br />
-                  Disgust seeps in through my pores making puddles of yuck along
-                  the floor.<br />
-                  I've slipped in them many times before.<br />
-                  And felt the sludge cling to my skin, sour breath smothers and
-                  sometimes stings.<br />
-                  That memory is a mess of jagged pieces, scratching in ways
-                  that make colours go blind <br />
-                  and white walls take too much space as if in spite.<br />
-                  I can't remember.<br />
-                  And I can't remember if what I remember fits or<br />
-                  falls to crash to glass fragments, Smash, Bad Luck.<br />
-                  I don't want to have another look.<br />
-                  I've swept those floors all the way out but<br />
-                  they catch in the gusts of storms and always find their way
-                  back to settle again, under<br />
-                  furniture absorbing the softness, the colour, the hues.<br />
-                  Eating away at the shadows,<br />
-                  till again I'm here in this bright white walled room with pink
-                  leaving traces of ultraviolet ink.<br />
-                  Won't ever wash away.<br />
-                  Where is this space that leaves such a harsh trace, <br />
-                  I'll need to travel it all to find where it sticks.<br />
-                  I like to think it clings somehow, easy to fling.<br />
-                  I'll pick up that whole board and throw it out, <br />
-                  but to where every place has too much glare<br />
-                  it'll find a new way to the Fallen king caught by a queen,<br />
-                  and we will begin this game again.<br />
-                  I need to find another way.<br />
-                  <i>Jessica K. Doyle</i>
-                </p>
-                <h4>Jessica K. Doyle - Trains</h4>
-                <p>
-                  ALT Description: A poem titled Trains by Jessica K. Doyle is
-                  presented on a soft beige background with faint train track
-                  illustrations running vertically along both sides. The poem
-                  delves into themes of anticipation, movement, and
-                  introspection, exploring metaphors of trains and their
-                  journeys. The imagery evokes both physical and emotional
-                  travels, capturing fleeting moments of reflection and
-                  connection. At the bottom, a train track loops, symbolizing
-                  the continuous journey. The text is laid out in a clear,
-                  elegant format, complemented by the train motif.
-                </p>
-                <h4>Jessica K Doyle - Trains</h4>
-                <p>
-                  <i>By Jessica K. Doyle</i><br />
-                  Waiting once, it was hard but not today, <br />
-                  the jittering sense of anticipation blocked out by the giddy
-                  yet delicate confidence.<br />
-                  Heads sway from side to side<br />
-                  Stand up, arch necks, look up<br />
-                  On the board it stares back<br />
-                  20 minutes late.<br />
-                  Back and forth the tension filling up the space,<br />
-                  Detached from it today.<br />
-                  The pigeons fly<br />
-                  A motor rolls on in the window sill, I wonder what love's in
-                  there.<br />
-                  Grated windows would they open to adventures creatures had
-                  among the tracks.<br />
-                  Weeds and polls spike up from roofs.<br />
-                  People start to pace<br />
-                  An announcer explains further<br />
-                  Phones come out heads sway in the liminal dance of uncertainty
-                  steeped in anticipation.<br />
-                  There all running ahead in this race.<br />
-                  Human clocks, fueled on feelings of time, but never of the
-                  present you'd never need a watch in this place.<br />
-                  What would it be if we took moments in the stress in the
-                  liminal to just sit and observe<br />
-                  Build around the person<br />
-                  maybe would get us there<br />
-                  Build back up curiosity and wonder.<br />
-                  Is that possible from the outside to reach in or does the
-                  inside need help to reach out.<br />
-                  A cold breeze flows.<br />
-                  I notice the discomfort<br />
-                  maybe it's another challenge not to fall into it but sit with
-                  it.<br />
-                  I had happiness today though<br />
-                  Success fulfillment achievements and confidence<br />
-                  those factors need to be taken into account<br />
-                  The sun shines down again and suddenly the air is warm the
-                  coolness is still there but resembles the contrary of hot tea
-                  with ice cream.<br />
-                  I could be at the beach looking out to the vast waves wrapped
-                  in a warm blanket hair blowing in coastal breeze.<br />
-                  It's strong in resemblance even while I sit waiting or pausing
-                  in this moment to take it in and the train is here.<br />
-                  In we go to the next moment.<br />
-                  The rush begins again to get a seat.<br />
-                  Or maybe not, the doors stay locked<br />
-                  The clouds move in whispers to the right and suddenly it's
-                  like I'm on a boat, a yellow streaked concrete boat.<br />
-                  Let's sit back down change this delusion of time.<br />
-                  Perception is time to hallucinate.<br />
-                  And off it moves across the tracks<br />
-                  In swarms people fall back retreat downtrodden and unsure.<br />
-                  Some give up and stamp off the platform. Too much force
-                  applied to each footstep.<br />
-                  The bricks, they lie quite normal in upward vertical
-                  horizontal jumps but today like slithering snakes upon their
-                  way, never ending.<br />
-                  Fitting for the station.<br />
-                  Only for a moment and back to bricks.<br />
-                  Now I've figured out how to make it flip.<br />
-                  The beats pick up<br />
-                  I've an urge to stand up and move and dance<br />
-                  Exuberant and circling but maybe that might be too much.<br />
-                  Out by the trees closer to home I'll be free to spin and sing
-                  till darkness gently pulls me in.<br />
-                  And safety yellow lines might collide into water slides if
-                  dancing was afoot.<br />
-                  And that would require the lending of a new book and we'll
-                  alas I'm finally enjoying this one.<br />
-                  And two now arrive at once<br />
-                  And a race of trains ensues,<br />
-                  Which one will get the flocks there faster.<br />
-                  Unseuredness rises like lime buzzing bees protecting some
-                  invisible queen.<br />
-                  Most race to the first but stare in disbelief in their two
-                  fast choices as the familiar one arrives on the right side.<br />
-                  That grabbing feeling for what is known but panic at an idea
-                  of missing both if change is attempted, whips across many a
-                  face.<br />
-                  I'll go with comfort and the view of the roof tops.<br />
-                  If I could navigate life across the roof tops and bypass the
-                  streets I would.<br />
-                  Even with the risk of a sudden plunge and the possibly of a
-                  factory line system of borrowing books.<br />
-                  I would,<br />
-                  Wonder lives on roof tops. Bounds and bounds of it.<br />
-                  But there would be no guarantee the next story would even have
-                  roof tops.<br />
-                  Or silky black four legged fluffs.<br />
-                  We'd miss<br />
-                  So I'll take the hustle, the bustle the bangs and shouts and
-                  stimulus pouring in floods and crashing in waterfalls, on
-                  ankles with mechanical faults.<br />
-                  Be sure, well… they are my family of fluffs.<br />
-                  I'll go now, breathe in each moment. Feel the hum and the purr
-                  and rock of the waves of tracks below.<br />
-                  A warm glow waits for me to catch it and see where we will go.
+                  ALT Description: A mixed-media illustration of a male figure
+                  emerging from a swirl of layered textures, symbolizing
+                  resilience and self-discovery.
                 </p>
               </div>
             </div>
@@ -876,7 +770,7 @@
                 aria-expanded="false"
                 aria-controls="artistSix"
               >
-                Submission 6 - Audrey Steinier
+                Submission #6
               </button>
             </h3>
             <div
@@ -886,31 +780,70 @@
               data-bs-parent="#transcriptAccordion"
             >
               <div class="accordion-body">
-                <h4>Audrey Steinier</h4>
-                <p>
-                  This artwork is about the frustration and pain that comes with
-                  having a disability or illness that is not understood by the
-                  medical community. I have been prescribed medication for my
-                  chronic pain where the side effects of that medication were
-                  more pain of the same variety. Doctors are unsure of the
-                  origin of your pain or how you experience the pain, and so
-                  seem to prescribe medication based on your explanation of the
-                  pain (being neurodivergent does not help with this). In this
-                  artwork I have used my own medication tablets, their side
-                  effects, and the 2025 national gallery of Ireland's calendar.
-                </p>
                 <h4>
-                  Audrey Steinier - What does art mean to you? What role does
-                  art play in building an inclusive future?
+                  How did the Christy Nolan quote you chose to use influence the
+                  direction or meaning of your work, and why did you feel it
+                  resonated with your personal experiences?
                 </h4>
                 <p>
-                  Art is one of the only ways for marginalised people to express
-                  themselves in a capitalist society. Through art, marginalised
-                  people can make themselves and their opinions visible to the
-                  dominant culture. Hopefully pushing for change not just in the
-                  art space but in greater society. Through art an individual
-                  can also process their anger and sadness that occurs in our
-                  current system of governance.
+                  I was drawn to the quote, 'Though I speak in silence, my words
+                  echo with truth,' because it captures the tension between
+                  feeling unheard and knowing our experiences still carry
+                  weight. As someone who uses alternative communication methods,
+                  I've often felt that my voice isn't fully recognized. Yet, I
+                  believe that even the quiet or unconventional ways we express
+                  ourselves can resonate powerfully. Christy Nolan's words gave
+                  me the confidence to highlight this quiet strength in my
+                  piece—conveying how, despite the seeming 'silence,' our truths
+                  can create ripples of understanding and empathy in others.
+                </p>
+                <h4>
+                  What was your process for developing the piece, and did you
+                  encounter any particular challenges - whether artistic,
+                  technical, or related to accessibility - that shaped the final
+                  result?
+                </h4>
+                <p>
+                  I began by sketching out a rough concept inspired by the
+                  Christy Nolan quote I'd chosen, focusing on themes of
+                  resilience and self-discovery. From there, I experimented with
+                  different mediums—charcoal, watercolor, and digital
+                  tools—until I found the combination that best conveyed the
+                  idea of emerging strength. One significant challenge I faced
+                  was adapting my workspace to accommodate my physical
+                  limitations: I needed specialized tools with better grip and
+                  ergonomic design to reduce strain. This, in turn, led me to
+                  explore more tactile techniques and texture in my piece.
+                  Although it was time-consuming to test and refine these
+                  methods, the 2 experience ultimately helped me create a more
+                  layered, visually engaging artwork that truly represents my
+                  journey.
+                </p>
+                <h4>
+                  In exploring perseverance, identity, and creative expression,
+                  what core message or insight do you hope viewers, readers, or
+                  listeners will take away from your piece?
+                </h4>
+                <p>
+                  I hope that my piece reminds people that perseverance is not
+                  just about pushing through difficult circumstances—it's also
+                  about embracing your own story and identity in the process. By
+                  weaving together visuals and narration that reflect personal
+                  growth, I wanted to show how creative expression can transform
+                  our struggles into something powerful and unifying.
+                  Ultimately, my aim is for anyone experiencing the work to feel
+                  seen and encouraged to use their own voice, recognizing that
+                  every unique perspective adds depth and beauty to our shared
+                  human experience.
+                </p>
+                <h4>
+                  Submission #6 - Though I speak in silence, my words speak the
+                  truth
+                </h4>
+                <p>
+                  ALT Description: A mixed-media illustration of a male figure
+                  emerging from a swirl of layered textures, symbolizing
+                  resilience and self-discovery.
                 </p>
               </div>
             </div>
