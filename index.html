@@ -1237,9 +1237,11 @@
                 class="btn btn-success mt-3 mb-3"
                 download="christy-nolan-event-transcript.pdf"
                 aria-label="Download the full artwork transcript as an accessible PDF document. A PDF reader is required. Alternatively, view the HTML version of the transcript."
+                data-bs-toggle="tooltip"
+                data-bs-placement="top"
+                title="File size: 1MB. A PDF reader is required to view this document."
               >
-                Download "Perseverance Through Words" Transcript (PDF, 1MB) - A
-                PDF reader is required
+                Download "Perseverance Through Words" Transcript (PDF)
               </a>
               <br />
               <a
@@ -2309,6 +2311,16 @@
       function toggleBlur(element) {
         element.classList.toggle("active");
       }
+    </script>
+
+    <!-- PDF Tooltip -->
+    <script>
+      var tooltipTriggerList = [].slice.call(
+        document.querySelectorAll('[data-bs-toggle="tooltip"]')
+      );
+      var tooltipList = tooltipTriggerList.map(function (tooltipTriggerEl) {
+        return new bootstrap.Tooltip(tooltipTriggerEl);
+      });
     </script>
   </body>
 </html>
