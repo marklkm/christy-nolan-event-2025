@@ -941,22 +941,23 @@
           >.
         </p>
       </section>
-      <!-- Event Timeline - Start-->
-      <!-- Events section -->
+      <!-- Event Timeline - Start -->
       <section id="events" aria-labelledby="events-heading" class="mb-5">
         <header>
           <h2 id="events-heading">Event Timeline</h2>
         </header>
+
         <!-- Event Cards -->
         <div class="row row-cols-1 row-cols-md-3 g-4">
           <!-- Launch Event -->
           <div class="col">
             <article
               class="card h-100 border-primary"
-              aria-label="Competition Launch"
+              aria-labelledby="launch-title"
             >
               <div class="card-body">
-                <h3 class="card-title">Competition Launch</h3>
+                <!-- Use an id on the h3 so it's associated properly with the article -->
+                <h3 id="launch-title" class="card-title">Competition Launch</h3>
                 <p class="card-text">
                   Official announcement, website updates, and social media
                   promotions. Our launch event welcomes all participants to
@@ -965,18 +966,24 @@
                 </p>
               </div>
               <div class="card-footer bg-transparent border-primary">
-                <p class="fs-4 text-muted">Date: February 12, 2025</p>
+                <!-- Keep it a paragraph but style as needed -->
+                <p class="text-muted mb-0">
+                  <strong>Date:</strong> February 12, 2025
+                </p>
               </div>
             </article>
           </div>
+
           <!-- Midpoint Workshop -->
           <div class="col">
             <article
               class="card h-100 border-success"
-              aria-label="Midpoint Workshop"
+              aria-labelledby="midpoint-title"
             >
               <div class="card-body">
-                <h3 class="card-title">Midpoint Workshop</h3>
+                <h3 id="midpoint-title" class="card-title">
+                  Midpoint Workshop
+                </h3>
                 <p class="card-text">
                   A mid-competition workshop for participants to refine their
                   pieces, receive feedback, and discuss best practices in
@@ -985,18 +992,23 @@
                 </p>
               </div>
               <div class="card-footer bg-transparent border-success">
-                <p class="fs-4 text-muted">Date: Early March 2025</p>
+                <p class="text-muted mb-0">
+                  <strong>Date:</strong> Early March 2025
+                </p>
               </div>
             </article>
           </div>
-          <!-- Final Celebration -->
+
+          <!-- Final Submissions -->
           <div class="col">
             <article
               class="card h-100 border-success"
-              aria-label="Final Celebration"
+              aria-labelledby="final-submissions-title"
             >
               <div class="card-body">
-                <h3 class="card-title">Final Submissions</h3>
+                <h3 id="final-submissions-title" class="card-title">
+                  Final Submissions
+                </h3>
                 <p class="card-text">
                   A culminating event featuring readings of winning submissions
                   and an award ceremony honoring all participants and Christy
@@ -1005,18 +1017,23 @@
                 </p>
               </div>
               <div class="card-footer bg-transparent border-success">
-                <p class="fs-4 text-muted">Date: March 28, 2025</p>
+                <p class="text-muted mb-0">
+                  <strong>Date:</strong> March 28, 2025
+                </p>
               </div>
             </article>
           </div>
-          <!-- Final Celebration -->
+
+          <!-- Winner Announcement -->
           <div class="col">
             <article
               class="card h-100 border-success"
-              aria-label="Final Celebration"
+              aria-labelledby="winner-title"
             >
               <div class="card-body">
-                <h3 class="card-title">Winner Announcement</h3>
+                <h3 id="winner-title" class="card-title">
+                  Winner Announcement
+                </h3>
                 <p class="card-text">
                   Judges will select winners based on creativity, originality,
                   and impact. A culminating event featuring readings of winning
@@ -1025,18 +1042,23 @@
                 </p>
               </div>
               <div class="card-footer bg-transparent border-success">
-                <p class="fs-4 text-muted">Date: End of April 2025</p>
+                <p class="text-muted mb-0">
+                  <strong>Date:</strong> End of April 2025
+                </p>
               </div>
             </article>
           </div>
+
           <!-- Final Celebration -->
           <div class="col">
             <article
               class="card h-100 border-success"
-              aria-label="Final Celebration"
+              aria-labelledby="celebration-title"
             >
               <div class="card-body">
-                <h3 class="card-title">Final Celebration</h3>
+                <h3 id="celebration-title" class="card-title">
+                  Final Celebration
+                </h3>
                 <p class="card-text">
                   Live showcase of winning works at The Long Room, Trinity
                   College. A culminating event featuring readings of winning
@@ -1045,12 +1067,15 @@
                 </p>
               </div>
               <div class="card-footer bg-transparent border-success">
-                <p class="fs-4 text-muted">Date: May 13, 2025</p>
+                <p class="text-muted mb-0">
+                  <strong>Date:</strong> May 13, 2025
+                </p>
               </div>
             </article>
           </div>
         </div>
       </section>
+      <!-- Event Timeline - End -->
 
       <section id="participate" class="event-section mt-4" tabindex="0">
         <h2 class="text-center">How to Participate</h2>
