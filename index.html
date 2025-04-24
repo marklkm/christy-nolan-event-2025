@@ -142,32 +142,6 @@
         font-size: 1.2rem;
       }
     </style>
-    <script type="text/javascript">
-      // Google Translate initialization
-      function loadGoogleTranslate() {
-        new google.translate.TranslateElement(
-          { pageLanguage: "en" },
-          "google_translate_element"
-        );
-      }
-
-      function triggerTranslate() {
-        if (typeof google !== "undefined" && google.translate) {
-          loadGoogleTranslate();
-        } else {
-          alert("Google Translate is not available right now.");
-        }
-      }
-
-      // Dynamically load Google Translate script
-      (function () {
-        const script = document.createElement("script");
-        script.src =
-          "https://translate.google.com/translate_a/element.js?cb=loadGoogleTranslate";
-        script.defer = true;
-        document.body.appendChild(script);
-      })();
-    </script>
 
     <script src="https://translate.google.com/translate_a/element.js?cb=googleTranslateElementInit"></script>
   </head>
@@ -2939,123 +2913,6 @@
         document.getElementById("maincontent").classList.toggle("large-font");
       }
     </script>
-    <script>
-      // Hidden Disabilities - Sliding Cover
-      const hiddenDisabilityImages = [
-        {
-          src: "images/hidden__image1.png",
-          caption: "Autism",
-        },
-        {
-          src: "images/hidden__ADHD.png",
-          caption: "ADHD",
-        },
-        {
-          src: "images/hidden__image1.png",
-          caption: "AuDHD",
-        },
-        {
-          src: "images/hidden__image1.png",
-          caption: "Dyslexia",
-        },
-        {
-          src: "images/hidden__image1.png",
-          caption: "Chronic Fatigue Syndrome",
-        },
-        {
-          src: "images/hidden__image1.png",
-          caption: "Mental Health Conditions",
-        },
-        {
-          src: "images/hidden__image1.png",
-          caption: "Sensory Processing Disorder",
-        },
-        {
-          src: "images/hidden__image1.png",
-          caption: "PTSD",
-        },
-        {
-          src: "images/hidden__image1.png",
-          caption: "Fibromyalgia",
-        },
-      ];
-
-      const hiddenGrid = document.getElementById("hidden-disability-grid");
-
-      hiddenDisabilityImages.forEach((image) => {
-        const col = document.createElement("div");
-        col.className = "col";
-        col.innerHTML = `
-          <div class="hidden-disability" tabindex="0" onclick="toggleCover(this)">
-              <img src="${image.src}" alt="${image.caption}" class="rounded shadow">
-              <div class="cover">Hidden <br>${image.caption}</div>
-          </div>
-      `;
-        hiddenGrid.appendChild(col);
-      });
-
-      function toggleCover(element) {
-        element.classList.toggle("active");
-      }
-
-      // Seen Disabilities - Blur Effect
-      const seenDisabilityImages = [
-        {
-          src: "images/hidden__image1.png",
-          caption: "Wheelchair User",
-        },
-        {
-          src: "images/hidden__image1.png",
-          caption: "Living with Cerebral Palsy",
-        },
-        {
-          src: "images/hidden__image1.png",
-          caption: "Using a Mobility Aid",
-        },
-        {
-          src: "images/hidden__image1.png",
-          caption: "Navigating with Visual Impairment",
-        },
-        {
-          src: "images/hidden__image1.png",
-          caption: "Person with a Prosthetic Leg",
-        },
-        {
-          src: "images/hidden__image1.png",
-          caption: "Using a Hearing Aid",
-        },
-        {
-          src: "images/hidden__image1.png",
-          caption: "Student with Spinal Injury",
-        },
-        {
-          src: "images/hidden__image1.png",
-          caption: "Using Assistive Technology",
-        },
-        {
-          src: "images/hidden__image1.png",
-          caption: "Using Orthopedic Braces",
-        },
-      ];
-
-      const seenGrid = document.getElementById("seen-disability-grid");
-
-      seenDisabilityImages.forEach((image) => {
-        const col = document.createElement("div");
-        col.className = "col";
-        col.innerHTML = `
-          <div class="seen-disability" tabindex="0" onclick="toggleBlur(this)">
-              <img src="${image.src}" alt="${image.caption}" class="rounded shadow">
-              <div class="caption">${image.caption}</div>
-          </div>
-      `;
-        seenGrid.appendChild(col);
-      });
-
-      function toggleBlur(element) {
-        element.classList.toggle("active");
-      }
-    </script>
 
     <!-- PDF Tooltip -->
     <script>
@@ -3065,6 +2922,33 @@
       var tooltipList = tooltipTriggerList.map(function (tooltipTriggerEl) {
         return new bootstrap.Tooltip(tooltipTriggerEl);
       });
+    </script>
+
+    <script type="text/javascript">
+      // Google Translate initialization
+      function loadGoogleTranslate() {
+        new google.translate.TranslateElement(
+          { pageLanguage: "en" },
+          "google_translate_element"
+        );
+      }
+
+      function triggerTranslate() {
+        if (typeof google !== "undefined" && google.translate) {
+          loadGoogleTranslate();
+        } else {
+          alert("Google Translate is not available right now.");
+        }
+      }
+
+      // Dynamically load Google Translate script
+      (function () {
+        const script = document.createElement("script");
+        script.src =
+          "https://translate.google.com/translate_a/element.js?cb=loadGoogleTranslate";
+        script.defer = true;
+        document.body.appendChild(script);
+      })();
     </script>
   </body>
 </html>
