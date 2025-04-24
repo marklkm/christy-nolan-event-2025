@@ -2923,32 +2923,5 @@
         return new bootstrap.Tooltip(tooltipTriggerEl);
       });
     </script>
-
-    <script type="text/javascript">
-      // Google Translate initialization
-      function loadGoogleTranslate() {
-        new google.translate.TranslateElement(
-          { pageLanguage: "en" },
-          "google_translate_element"
-        );
-      }
-
-      function triggerTranslate() {
-        if (typeof google !== "undefined" && google.translate) {
-          loadGoogleTranslate();
-        } else {
-          alert("Google Translate is not available right now.");
-        }
-      }
-
-      // Dynamically load Google Translate script
-      (function () {
-        const script = document.createElement("script");
-        script.src =
-          "https://translate.google.com/translate_a/element.js?cb=loadGoogleTranslate";
-        script.defer = true;
-        document.body.appendChild(script);
-      })();
-    </script>
   </body>
 </html>
